@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     jshint: {
       all: ['Gruntfile.js']
     },
-    
+
     watch: {
       scripts: {
         files: ['**/*.js'],
@@ -23,4 +23,7 @@ module.exports = function(grunt) {
 
   // Diese Aufgabe wird beim Aufruf ohne Parameter ausgeführt.
   grunt.registerTask('default', ['jshint', 'watch']);
+
+  // Diese Aufgabe wird von flightplan aufgerufen.
+  grunt.registerTask('prefly', []);
 };
