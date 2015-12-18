@@ -1,0 +1,26 @@
+{
+  "name": "webdev_vorlage",
+  "version": "1.0.0",
+  "description": "Dieses Projekt zeigt meine Basiskonfiguration für die Entwicklung einer Website bzw. Webapp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/m-entrup/webdev_Vorlage.git"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "WebDev",
+    "Vorlage"
+  ],
+  "author": "Michael Entrup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-entrup/webdev_Vorlage/issues"
+  },
+  "homepage": "https://github.com/m-entrup/webdev_Vorlage#readme"
+}
