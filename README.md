@@ -1,6 +1,6 @@
 ## Zugriff auf einen Webserver per ``ssh``
 
-Besitzt man Webspace bei Strato, dann kann man auf diesen auch per ``ssh`` zugreifen. Bei Linux-Servern ist diese zugriffs-Art so gut wie immer möglich. Man sollte ``ssh`` dem Zugriff per FTP vorziehen. Bei ``ssh`` ist die Verbindung grundsätzlich verschlüsselt, was bei FTP nicht der Fall ist. Außerdem kann ``rsync`` ``ssh`` nutzen und man profiziert somit vom viel schnelleren Upload per ``rsync``. Eine gute Einführung in die Nutzung von ``ssh`` bietet ein [LearnCode.academy Video].
+Besitzt man Webspace bei Strato, dann kann man auf diesen auch per ``ssh`` zugreifen. Bei Linux-Servern ist diese Zugriffs-Art so gut wie immer möglich. Man sollte ``ssh`` dem Zugriff per FTP vorziehen. Bei ``ssh`` ist die Verbindung grundsätzlich verschlüsselt, was bei FTP nicht der Fall ist. Außerdem kann ``rsync`` ``ssh`` nutzen und man profitiert somit vom viel schnelleren Upload per ``rsync``. Eine gute Einführung in die Nutzung von ``ssh`` bietet ein [LearnCode.academy Video].
 
 
 ```bash
@@ -23,19 +23,19 @@ cat id_rsa.pub >> .ssh/authorized_keys
 # Jetzt kann man den Server verlassen und sich beim nächsten mal ohne Passwort anmelden
 ```
 
-## Wie wurde diese vorlage erstellt?
+## Wie wurde diese Vorlage erstellt?
 
 Der folgende Code-Block enthält alle ausgeführten Befehle. Fall nötig, dann werden diese kurz mit einem Kommentar erläutert. Ein Kommentar nach dem Befehl weißt auf die getätigten eingaben hin.
 
 ```bash
-# Es wird vorrausgesetzt, dass git und node.js (inklusive npm und grunt-cli) installiert sind
+# Es wird vorausgesetzt, dass git und node.js (inklusive npm und grunt-cli) installiert sind
 
 mkdir webdev_Vorlage
 cd webdev_Vorlage
 
 npm init
 # Es wird eine Vielzahl von Parametern abgefragt.
-# Welche Werte ich jeweils eigegeben habe, das ist in der Datei package.json zu sehen.
+# Welche Werte ich jeweils eingegeben habe, das ist in der Datei package.json zu sehen.
 
 git init
 git add .
@@ -60,6 +60,8 @@ npm install grunt-contrib-jshint -S
 npm install grunt-contrib-watch -S
 # Gruntfile.js muss muss erweitert werden (siehe Version 2).
 
+git add .
+git commit -m "Hinzufügen von jshint und grunt-watch."
 ```
 
 ### Grunt.js
