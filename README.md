@@ -45,23 +45,61 @@ git push -u origin master
 
 npm install -S grunt
 touch Gruntfile.js
-# Der Inhalt der Datei ist weiter unten aufgeführt.
+# Der Inhalt der Datei ist weiter unten aufgeführt (Version 1).
 
 # Wir möchten nicht, dass node_modules ins Git-Repository aufgenommen wird.
 touch .gitignore
 echo "node_modules/" >> .gitignore
+
+git add .
+git commit -m "Hinzufügen von Grunt."
+
+# JavaScript auf Fehler überprüfen
+npm install grunt-contrib-jshint -S
+# Aufgaben beim Spechern von Dateien ausführen.
+npm install grunt-contrib-watch -S
+# Gruntfile.js muss muss erweitert werden (siehe Version 2).
+
 ```
 
 ### Grunt.js
 
+#### Version 1
 ```JavaScript
 module.exports = function(grunt) {
   // Diese Aufgabe wird beim Aufruf ohne Parameter ausgeführt.
   grunt.registerTask('default', []);
 };
+```
 
-git add .
-git commit -m "Hinzufügen von Grunt."
+#### Version 2
+```JavaScript
+module.exports = function(grunt) {
+  // https://www.npmjs.com/package/grunt-contrib-jshint
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  // https://www.npmjs.com/package/grunt-contrib-watch
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  // Konfiguration der Aufgaben:
+  grunt.initConfig({
+    jshint: {
+      all: ['Gruntfile.js']
+    },
+
+    watch: {
+      scripts: {
+        files: ['**/*.js'],
+        tasks: ['jshint'],
+        options: {
+          spawn: false,
+        },
+      },
+    },
+  });
+
+  // Diese Aufgabe wird beim Aufruf ohne Parameter ausgeführt.
+  grunt.registerTask('default', ['jshint', 'watch']);
+};
 ```
 
 [LearnCode.academy Video]: https://www.youtube.com/watch?v=DbPDraCYju8
