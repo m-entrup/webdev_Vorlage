@@ -115,7 +115,7 @@ module.exports = function(grunt) {
 
 ### flightplan.js
 
-```
+```JavaScript
 // https://www.npmjs.com/package/flightplan
 // https://github.com/pstadler/flightplan
 var plan = require('flightplan');
