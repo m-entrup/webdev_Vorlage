@@ -2,7 +2,6 @@
   "name": "webdev_vorlage",
   "version": "1.0.0",
   "description": "Dieses Projekt zeigt meine Basiskonfiguration für die Entwicklung einer Website bzw. Webapp.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,16 +16,22 @@
     "WebDev",
     "Vorlage"
   ],
-  "author": "Michael Entrup",
+  "author": {
+    "name": "Michael Entrup",
+    "email": "mail@m-entrup.de",
+    "url": "http://m-entrup.de"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/m-entrup/webdev_Vorlage/issues"
   },
   "homepage": "https://github.com/m-entrup/webdev_Vorlage#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "flightplan": "^0.6.8",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.3",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "jshint": "^2.9.1-rc1"
   }
 }

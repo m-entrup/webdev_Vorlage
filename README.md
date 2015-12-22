@@ -1,3 +1,28 @@
+# README zur webdev-Vorlage
+
+## ``package.json`` kurz erklärt
+
+Die Datei ``package.json`` ist das Kernsück eines jeden Projektes. In dieser Datei werden diverse Informationen zum Projekt festgehalten und sie steuert auch die Bereitstellung diverser Tools. Besonders der Abschnitt ``devDependencies`` ist in diesem Zusammenhang von Interesse. Dort werden alle Abhängigkeiten eingetragen, die während der Entwicklung notwendig sind. Im gegensatz dazu werden in ``dependencies`` alle Abhängigkeiten hinterlegt, die für das Funktionieren der Webapp notwendig sind.
+
+### ``devDependencies``
+
+```json
+"devDependencies": {
+  "flightplan": "^0.6.8",
+  "grunt": "^0.4.5",
+  "grunt-contrib-jshint": "^0.11.3",
+  "grunt-contrib-watch": "^0.6.1",
+  "jshint": "^2.9.1-rc1"
+}
+```
+
+Gezeigt sind alle Tools, die ich während der Entwicklung verwende. Neue Tool kann man durch den Aufruf von ``npm install <tool> -D`` hinzufügen. ``-D`` ist die Abkürzung für ``--save-dev``, wodurch ``<tool>`` zum Abschnitt ``devDependencies`` der ``package.json`` hinzugefügt wird. Die Parameter ``-S`` und ``--save`` erweitern entsprechend den Abschnitt ``dependencies``.
+
+### Weitere Informationen zu ``package.json``
+
+Die Datei weist eine fest vorgegebene Syntax. Der Aufruf von ``npm install`` (installiert alle angegebenen Abhängigkeiten) im Verzeichnis des Projektes gibt Warnungen aus, wenn notwendige Daten fehlen. Es kommt jedoch auch zu Warnungen, wenn die Syntax nicht exakt eingehalten wurde. Dieser [Link](https://docs.npmjs.com/files/package.json) führt zu einer ausführlichen Dokumentation von ``package.json`` und hilft dabei, die Syntax einzuhalten.
+Die hier zur Verfügung gestellte ``package.json`` enthält aalle wichtigen Felder, die nur noch editiert werden müssen, nachdem man die Datei kopiert hat.
+
 ## Zugriff auf einen Webserver per ``ssh``
 
 Besitzt man Webspace bei Strato, dann kann man auf diesen auch per ``ssh`` zugreifen. Bei Linux-Servern ist diese Zugriffs-Art so gut wie immer möglich. Man sollte ``ssh`` dem Zugriff per FTP vorziehen. Bei ``ssh`` ist die Verbindung grundsätzlich verschlüsselt, was bei FTP nicht der Fall ist. Außerdem kann ``rsync`` ``ssh`` nutzen und man profitiert somit vom viel schnelleren Upload per ``rsync``. Eine gute Einführung in die Nutzung von ``ssh`` bietet ein [LearnCode.academy Video].
